@@ -1,0 +1,15 @@
+{
+    "name": "i74ifa/vhost",
+    "autoload": {
+        "psr-4": {
+            "I74ifa\\Vhost\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "i74ifa",
+            "email": "i74ifa@gmail.com"
+        }
+    ],
+    "require": {}
+}
