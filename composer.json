@@ -2,6 +2,8 @@
     "name": "i74ifa/vaid",
 
     "version": "1.0",
+
+    "license": "MIT",
     "autoload": {
         "psr-4": {
             "I74ifa\\Vaid\\": "src/"
