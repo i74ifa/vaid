@@ -8,14 +8,9 @@ use I74ifa\Vhost\Host;
 use I74ifa\Vhost\Vhost;
 
 
-
-exit;
 if (empty($argv[1])){
     echo "not found directory project\n";
     exit;
 }
 $vhost = (new Vhost($argv[1]));
-$vhost->action();
-// print_r(
-//     $vhost
-// );
+echo $vhost->action() . "\n";

@@ -18,10 +18,15 @@ class Vhost
 
     protected $ip;
     protected $fileName;
+
+    public $commands = [];
     public $serverAdmin  = 'i74ifa@gmail.com';
 
     public function __construct(public $command)
     {
+        $this->commands = [
+            'link', 'unlink'
+        ];
         $this->dirProject = getcwd();
         $this->pathInfo();
         $this->typeProject();
@@ -29,10 +34,9 @@ class Vhost
 
     public function action()
     {
-
-        switch ($this->command) {
-            case 'link':
-                return $this->link();
+        $command = $this->command;
+        if (in_array($this->command, $this->commands)) {
+            return $this->$command();
         }
     }
     
@@ -40,15 +44,21 @@ class Vhost
     public function link()
     {
         if (Apache::projectExist($this->domain)) {
-            echo 'its linked in '. $this->domain . ".test\n";
-            exit;
-        }else {
-            $this->ip = Apache::generateIp();
-            $this->makeFile();
-            Host::add($this->ip, $this->domain);
-            return $this->enableSite();
-
+            return 'its linked in '. $this->domain . ".test\n";            
         }
+        $this->ip = Apache::generateIp();
+        $this->makeFile();
+        Host::add($this->ip, $this->domain);
+        return $this->enableSite();
+
+    }
+
+    public function unlink()
+    {
+        Host::remove($this->domain);
+
+
+        return $this->disableSite();
     }
 
     protected function makeFile()
@@ -62,10 +72,15 @@ class Vhost
     }
     protected function enableSite()
     {
-        shell_exec("sudo a2ensite $this->fileName");
-        shell_exec("sudo systemctrl restart apache2");
-
+        Apache::enable($this->fileName);
         return 'link generated';
+    }
+
+
+    protected function disableSite()
+    {
+        Apache::disable($this->fileName);
+        return 'unlink success';
     }
 
     protected function typeProject()

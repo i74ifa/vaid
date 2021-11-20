@@ -1,5 +1,7 @@
 {
     "name": "i74ifa/vhost",
+
+    "version": "1.0",
     "autoload": {
         "psr-4": {
             "I74ifa\\Vhost\\": "src/"

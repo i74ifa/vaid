@@ -8,6 +8,10 @@ class Apache
 
     public const SERVER_ADMIN = 'i74ifa@gmail.com';
 
+    public const TLD = '.test';
+
+    public const PORT = '80';
+
     public static function projectExist($domain)
     {
 
@@ -23,9 +27,9 @@ class Apache
     public static function contentFile($ip, $basePath, $domain)
     {
         return "
-<VirtualHost $ip:82>
+<VirtualHost $ip:". self::PORT .">
     DocumentRoot '$basePath'
-    ServerName $domain.test
+    ServerName $domain". self::TLD ."
     ServerAdmin " . self::SERVER_ADMIN . "
     <Directory '$basePath'>
         Options All
@@ -45,5 +49,19 @@ class Apache
 
         $ip .= '.' . random_int(1, 255);
         return $ip;
+    }
+
+    public static function enable($config)
+    {
+        shell_exec("sudo a2ensite $config");
+        shell_exec("sudo systemctl restart apache2");
+        
+        return 'link generated';
+    }
+    
+    public static function disable($config)
+    {
+        shell_exec("sudo a2dissite $config");
+        shell_exec("sudo systemctl restart apache2");
     }
 }
