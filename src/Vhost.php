@@ -1,7 +1,7 @@
 <?php
 
 
-namespace I74ifa\Vhost;
+namespace I74ifa\Vaid;
 
 class Vhost
 {

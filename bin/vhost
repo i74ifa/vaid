@@ -3,7 +3,7 @@
 
 require dirname(__DIR__) . '/vendor/autoload.php';
 
-use I74ifa\Vhost\Vhost;
+use I74ifa\Vaid\Vhost;
 
 
 if (empty($argv[1])){
