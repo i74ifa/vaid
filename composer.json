@@ -11,5 +11,7 @@
             "email": "i74ifa@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "php": "^8.0"
+    }
 }
