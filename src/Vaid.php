@@ -3,7 +3,7 @@
 
 namespace I74ifa\Vaid;
 
-class Vhost
+class Vaid
 {
 
     protected string $dirProject;
@@ -34,8 +34,8 @@ class Vhost
 
     public function action()
     {
-        $command = $this->command;
-        if (in_array($this->command, $this->commands)) {
+        $command = $this->command[1];
+        if (in_array($this->command[1], $this->commands)) {
             return $this->$command();
         }
     }
@@ -44,7 +44,9 @@ class Vhost
     public function link()
     {
         if (Apache::projectExist($this->domain)) {
-            return 'its linked in '. $this->domain . ".test\n";            
+            if (isset($this->command[2]) && $this->command[2] != '-n'){
+                return 'its linked in '. $this->domain . ".test\n";            
+            }
         }
         $this->ip = Apache::generateIp();
         $this->makeFile();

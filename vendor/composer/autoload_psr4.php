@@ -6,5 +6,5 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'I74ifa\\Vhost\\' => array($baseDir . '/src'),
+    'I74ifa\\Vaid\\' => array($baseDir . '/src'),
 );
