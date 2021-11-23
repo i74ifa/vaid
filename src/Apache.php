@@ -54,9 +54,7 @@ class Apache
     public static function enable($config)
     {
         shell_exec("sudo a2ensite $config");
-        shell_exec("sudo systemctl restart apache2");
-        
-        return 'link generated';
+        shell_exec("sudo systemctl restart apache2");        
     }
     
     public static function disable($config)
