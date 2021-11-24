@@ -2,6 +2,16 @@
 
 
 
+# echo $PWD
+DIR=${BASH_SOURCE[0]}
 
-# run vaid file
-php bin/vaid.php
+
+
+echo $DIR;
+
+# get raelpath using php
+DIR=$(php -r "echo dirname(realpath('$DIR'));");
+
+
+# # run vaid file
+php "$DIR/bin/vaid.php"
