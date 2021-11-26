@@ -14,4 +14,4 @@ DIR=$(php -r "echo dirname(realpath('$DIR'));");
 
 
 # # run vaid file
-php "$DIR/bin/vaid.php" $@
+php "$DIR/bin/vaid.php"
