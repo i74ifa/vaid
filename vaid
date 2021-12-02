@@ -1,4 +1,4 @@
-#! /usr/bin/env bash
+#!/usr/bin/env bash
 
 
 
@@ -7,11 +7,10 @@ DIR=${BASH_SOURCE[0]}
 
 
 
-echo $DIR;
 
 # get raelpath using php
 DIR=$(php -r "echo dirname(realpath('$DIR'));");
 
 
 # # run vaid file
-php "$DIR/bin/vaid.php"
+php "$DIR/bin/vaid.php" $@
