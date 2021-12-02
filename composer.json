@@ -1,7 +1,9 @@
 {
     "name": "i74ifa/vaid",
+    "description": "generate apache virtual host easily",
 
     "version": "1.35",
+    "keywords": ["apache", "vhost", "vaid", "ubuntu", "fedora", "arch", "linux"],
 
     "license": "MIT",
     "autoload": {
