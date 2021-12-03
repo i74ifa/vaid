@@ -13,7 +13,7 @@
 
 ### via composer
 ```
-composer require global i74ifa/vaid
+composer global require i74ifa/vaid
 ```
 
 ### **Manual**
