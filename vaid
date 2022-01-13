@@ -13,7 +13,7 @@ use I74ifa\Vaid\Helpers\Apache;
 use I74ifa\Vaid\Helpers\DistroType;
 use I74ifa\Vaid\Helpers\FileConfig;
 
-$app = new Application('vaid', '1.5');
+$app = new Application('vaid', '2.0');
 
 
 $app->addCommands([
