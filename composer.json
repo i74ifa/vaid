@@ -1,11 +1,9 @@
 {
     "name": "i74ifa/vaid",
-    "description": "generate apache virtual host easily",
-
-    "version": "beta-dev",
-    "keywords": ["apache", "vhost", "vaid", "ubuntu", "fedora", "arch", "linux"],
-
     "license": "MIT",
+    "version": "v1.5",
+    "description": "Use virtual host apache feature easily and quickly",
+    "keywords": ["apache", "vhost", "vaid", "ubuntu", "fedora", "arch", "linux"],
     "autoload": {
         "psr-4": {
             "I74ifa\\Vaid\\": "src/"
@@ -18,10 +16,8 @@
         }
     ],
     "require": {
-        "php": "^8.0"
+        "symfony/process": "^6.0",
+        "symfony/console": "^6.0"
     },
-
-    "bin": [
-        "vaid"
-    ]
+    "bin": ["vaid"]
 }

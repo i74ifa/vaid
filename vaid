@@ -1,16 +1,29 @@
-#!/usr/bin/env bash
+#! /usr/bin/php
+<?php
+require __DIR__ . '/vendor/autoload.php';
+require __DIR__ . '/helpers.php';
+
+use I74ifa\Vaid\Commands\InstallCommand;
+use Symfony\Component\Console\Application;
+use Symfony\Component\Process\Exception\ProcessFailedException;
+use Symfony\Component\Process\Process;
+use I74ifa\Vaid\Commands\LinkCommand;
+use I74ifa\Vaid\Commands\UnlinkCommand;
+use I74ifa\Vaid\Helpers\Apache;
+use I74ifa\Vaid\Helpers\DistroType;
+use I74ifa\Vaid\Helpers\FileConfig;
+
+$app = new Application('vaid', '1.5');
 
 
+$app->addCommands([
+    new LinkCommand(),
+    new UnlinkCommand(),
+    new InstallCommand()
+]);
 
-# echo $PWD
-DIR=${BASH_SOURCE[0]}
+// create config directory
 
+// $dir = scandir('');
 
-
-
-# get raelpath using php
-DIR=$(php -r "echo dirname(realpath('$DIR'));");
-
-
-# # run vaid file
-php "$DIR/bin/vaid.php" $@
+$app->run();
