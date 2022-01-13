@@ -1,7 +1,7 @@
 {
     "name": "i74ifa/vaid",
     "license": "MIT",
-    "version": "v2.0",
+    "version": "v2.0.1",
     "description": "Use virtual host apache feature easily and quickly",
     "keywords": ["apache", "vhost", "vaid", "ubuntu", "fedora", "arch", "linux"],
     "autoload": {
