@@ -67,7 +67,7 @@ class LinkCommand extends Command
         }
         // copy all SymLink
         new CopySymlink($this->dirConfig);
-        $conf = Conf::instance($this->cwd['basename'])
+        $conf = Conf::instance($this->cwd['basename'] . '.test')
             ->serverAdmin('example@app.com')
             ->documentRoot($this->cwdConf)
             ->options()
