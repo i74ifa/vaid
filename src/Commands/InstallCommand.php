@@ -62,7 +62,6 @@ class InstallCommand extends Command
         $bins = scandir('/usr/local/bin/');
         if (! in_array('vaid', $bins)) {
             $output->write("<info>symlink to users bin to /usr/local/bin</info>\n");
-            $dir = dirname(__DIR__) . '/vaid';
             shell_exec("sudo ln -snf $dir /usr/local/bin/");
         }
     }
