@@ -4,9 +4,9 @@
 
 ## Requirements
 
-* link
 * apache2
-* php 8
+* php ^7.2|^8.0
+* composer
 
 
 ## Install
@@ -14,6 +14,20 @@
 ### via composer
 ```
 composer global require i74ifa/vaid
+
+vaid install
+```
+If you haven't added composer tools to cli before, follow this
+
+open Terminal and open .bashrc
+```
+echo -e '\nexport PATH=$HOME/.config/composer/vendor/bin:$PATH' >> ~/.bashrc
+```
+
+or add this line on ```~/.bashrc```
+
+```
+export PATH=$HOME/.config/composer/vendor/bin:$PATH
 ```
 
 ### **Manual**
@@ -42,9 +56,3 @@ sudo vaid link
 ```
 sudo vaid unlink 
 ```
-
-
-
-
-
-
